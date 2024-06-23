@@ -7,23 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E39B6DB82C284351005D8DFE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39B6DB72C284351005D8DFE /* HomeScreenView.swift */; };
 		E3AD581A2C26D1CB008D1AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD58192C26D1CB008D1AD6 /* AppDelegate.swift */; };
 		E3AD581C2C26D1CB008D1AD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD581B2C26D1CB008D1AD6 /* SceneDelegate.swift */; };
 		E3AD581E2C26D1CB008D1AD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD581D2C26D1CB008D1AD6 /* ViewController.swift */; };
-		E3AD58212C26D1CB008D1AD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AD581F2C26D1CB008D1AD6 /* Main.storyboard */; };
 		E3AD58232C26D1CE008D1AD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3AD58222C26D1CE008D1AD6 /* Assets.xcassets */; };
 		E3AD58262C26D1CE008D1AD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3AD58242C26D1CE008D1AD6 /* LaunchScreen.storyboard */; };
+		E3AD58332C26D4FC008D1AD6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3AD58322C26D4FC008D1AD6 /* SnapKit */; };
+		E3AD58352C26D4FC008D1AD6 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = E3AD58342C26D4FC008D1AD6 /* SnapKit-Dynamic */; };
+		E3AD58382C26D57E008D1AD6 /* OnBoardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD58372C26D57E008D1AD6 /* OnBoardingData.swift */; };
+		E3AD583B2C26D81E008D1AD6 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD583A2C26D81E008D1AD6 /* UIColor+Extension.swift */; };
+		E3AD583E2C26DAA6008D1AD6 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD583D2C26DAA6008D1AD6 /* OnboardingCell.swift */; };
+		E3AD58452C26DCA0008D1AD6 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3AD58412C26DC9F008D1AD6 /* Lato-Black.ttf */; };
+		E3AD58462C26DCA0008D1AD6 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3AD58422C26DCA0008D1AD6 /* Lato-Thin.ttf */; };
+		E3AD58472C26DCA0008D1AD6 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3AD58432C26DCA0008D1AD6 /* Lato-Bold.ttf */; };
+		E3AD58482C26DCA0008D1AD6 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3AD58442C26DCA0008D1AD6 /* Lato-Regular.ttf */; };
+		E3AD584A2C26DD2E008D1AD6 /* UIFont+Extansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD58492C26DD2E008D1AD6 /* UIFont+Extansion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E39B6DB72C284351005D8DFE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		E3AD58162C26D1CB008D1AD6 /* Project 34 გიორგი მაჩაბლიშვილი.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 34 გიორგი მაჩაბლიშვილი.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AD58192C26D1CB008D1AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AD581B2C26D1CB008D1AD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E3AD581D2C26D1CB008D1AD6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E3AD58202C26D1CB008D1AD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3AD58222C26D1CE008D1AD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3AD58252C26D1CE008D1AD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3AD58272C26D1CE008D1AD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3AD58372C26D57E008D1AD6 /* OnBoardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingData.swift; sourceTree = "<group>"; };
+		E3AD583A2C26D81E008D1AD6 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		E3AD583D2C26DAA6008D1AD6 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		E3AD58412C26DC9F008D1AD6 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		E3AD58422C26DCA0008D1AD6 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		E3AD58432C26DCA0008D1AD6 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		E3AD58442C26DCA0008D1AD6 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		E3AD58492C26DD2E008D1AD6 /* UIFont+Extansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extansion.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +49,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3AD58332C26D4FC008D1AD6 /* SnapKit in Frameworks */,
+				E3AD58352C26D4FC008D1AD6 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E39B6DB62C284333005D8DFE /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E39B6DB72C284351005D8DFE /* HomeScreenView.swift */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
 		E3AD580D2C26D1CB008D1AD6 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +84,95 @@
 		E3AD58182C26D1CB008D1AD6 /* Project 34 გიორგი მაჩაბლიშვილი */ = {
 			isa = PBXGroup;
 			children = (
-				E3AD58192C26D1CB008D1AD6 /* AppDelegate.swift */,
-				E3AD581B2C26D1CB008D1AD6 /* SceneDelegate.swift */,
-				E3AD581D2C26D1CB008D1AD6 /* ViewController.swift */,
-				E3AD581F2C26D1CB008D1AD6 /* Main.storyboard */,
+				E3AD582D2C26D1F4008D1AD6 /* App */,
+				E3AD582E2C26D247008D1AD6 /* Scenes */,
+				E3AD58302C26D49D008D1AD6 /* Domain */,
+				E3AD583F2C26DC47008D1AD6 /* Resources */,
 				E3AD58222C26D1CE008D1AD6 /* Assets.xcassets */,
 				E3AD58242C26D1CE008D1AD6 /* LaunchScreen.storyboard */,
 				E3AD58272C26D1CE008D1AD6 /* Info.plist */,
 			);
 			path = "Project 34 გიორგი მაჩაბლიშვილი";
+			sourceTree = "<group>";
+		};
+		E3AD582D2C26D1F4008D1AD6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E3AD58192C26D1CB008D1AD6 /* AppDelegate.swift */,
+				E3AD581B2C26D1CB008D1AD6 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E3AD582E2C26D247008D1AD6 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E39B6DB62C284333005D8DFE /* Home Screen */,
+				E3AD582F2C26D464008D1AD6 /* OnBoarding */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E3AD582F2C26D464008D1AD6 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				E3AD581D2C26D1CB008D1AD6 /* ViewController.swift */,
+				E3AD583C2C26DA68008D1AD6 /* Collection View Cell */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		E3AD58302C26D49D008D1AD6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E3AD58362C26D54A008D1AD6 /* Api struct */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E3AD58362C26D54A008D1AD6 /* Api struct */ = {
+			isa = PBXGroup;
+			children = (
+				E3AD58372C26D57E008D1AD6 /* OnBoardingData.swift */,
+			);
+			path = "Api struct";
+			sourceTree = "<group>";
+		};
+		E3AD58392C26D7F1008D1AD6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E3AD583A2C26D81E008D1AD6 /* UIColor+Extension.swift */,
+				E3AD58492C26DD2E008D1AD6 /* UIFont+Extansion.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E3AD583C2C26DA68008D1AD6 /* Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E3AD583D2C26DAA6008D1AD6 /* OnboardingCell.swift */,
+			);
+			path = "Collection View Cell";
+			sourceTree = "<group>";
+		};
+		E3AD583F2C26DC47008D1AD6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E3AD58392C26D7F1008D1AD6 /* Extension */,
+				E3AD58402C26DC56008D1AD6 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E3AD58402C26DC56008D1AD6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E3AD58412C26DC9F008D1AD6 /* Lato-Black.ttf */,
+				E3AD58432C26DCA0008D1AD6 /* Lato-Bold.ttf */,
+				E3AD58442C26DCA0008D1AD6 /* Lato-Regular.ttf */,
+				E3AD58422C26DCA0008D1AD6 /* Lato-Thin.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +191,10 @@
 			dependencies = (
 			);
 			name = "Project 34 გიორგი მაჩაბლიშვილი";
+			packageProductDependencies = (
+				E3AD58322C26D4FC008D1AD6 /* SnapKit */,
+				E3AD58342C26D4FC008D1AD6 /* SnapKit-Dynamic */,
+			);
 			productName = "Project 34 გიორგი მაჩაბლიშვილი";
 			productReference = E3AD58162C26D1CB008D1AD6 /* Project 34 გიორგი მაჩაბლიშვილი.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +223,9 @@
 				Base,
 			);
 			mainGroup = E3AD580D2C26D1CB008D1AD6;
+			packageReferences = (
+				E3AD58312C26D4FC008D1AD6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E3AD58172C26D1CB008D1AD6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,8 +241,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3AD58262C26D1CE008D1AD6 /* LaunchScreen.storyboard in Resources */,
+				E3AD58482C26DCA0008D1AD6 /* Lato-Regular.ttf in Resources */,
+				E3AD58472C26DCA0008D1AD6 /* Lato-Bold.ttf in Resources */,
+				E3AD58462C26DCA0008D1AD6 /* Lato-Thin.ttf in Resources */,
+				E3AD58452C26DCA0008D1AD6 /* Lato-Black.ttf in Resources */,
 				E3AD58232C26D1CE008D1AD6 /* Assets.xcassets in Resources */,
-				E3AD58212C26D1CB008D1AD6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +256,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3AD58382C26D57E008D1AD6 /* OnBoardingData.swift in Sources */,
 				E3AD581E2C26D1CB008D1AD6 /* ViewController.swift in Sources */,
+				E3AD583E2C26DAA6008D1AD6 /* OnboardingCell.swift in Sources */,
+				E39B6DB82C284351005D8DFE /* HomeScreenView.swift in Sources */,
 				E3AD581A2C26D1CB008D1AD6 /* AppDelegate.swift in Sources */,
 				E3AD581C2C26D1CB008D1AD6 /* SceneDelegate.swift in Sources */,
+				E3AD584A2C26DD2E008D1AD6 /* UIFont+Extansion.swift in Sources */,
+				E3AD583B2C26D81E008D1AD6 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E3AD581F2C26D1CB008D1AD6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E3AD58202C26D1CB008D1AD6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E3AD58242C26D1CE008D1AD6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -296,7 +411,6 @@
 				INFOPLIST_FILE = "Project 34 გიორგი მაჩაბლიშვილი/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +437,6 @@
 				INFOPLIST_FILE = "Project 34 გიორგი მაჩაბლიშვილი/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -361,6 +474,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3AD58312C26D4FC008D1AD6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3AD58322C26D4FC008D1AD6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3AD58312C26D4FC008D1AD6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		E3AD58342C26D4FC008D1AD6 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3AD58312C26D4FC008D1AD6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E3AD580E2C26D1CB008D1AD6 /* Project object */;
 }
