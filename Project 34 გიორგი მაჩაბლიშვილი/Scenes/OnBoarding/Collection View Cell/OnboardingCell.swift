@@ -32,7 +32,7 @@ class OnboardingCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super .init(frame: frame)
-        
+        backgroundColor = UIColor(hexString: "121212")
         setup()
         setupConstraints()
     }

@@ -115,7 +115,7 @@ class ViewController: UIViewController {
             make.height.equalTo(24)
         }
     }
-
+    
     @objc func didTapOnPrimaryButton() {
         let nextIndex = pageController.currentPage + 1
         if nextIndex < onBoarding.count {
@@ -132,15 +132,14 @@ class ViewController: UIViewController {
                 primaryButton.setTitle("Next", for: .normal)
             }
         } else {
-            
             let vc = HomeScreenView()
-            navigationController?.pushViewController(vc, animated: true)
+            navigationController?.pushViewController(vc, animated: false)
         }
     }
     
     @objc func didTapOnSkipButton() {
         let vc = HomeScreenView()
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     @objc func didTapOnBackButton() {
@@ -164,5 +163,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x / view.frame.width)
         pageController.currentPage = Int(pageIndex)
+        let nextIndex = pageController.currentPage
+        if nextIndex == onBoarding.count - 1 {
+            primaryButton.setTitle("Get Started", for: .normal)
+            primaryButton.snp.updateConstraints { make in
+                make.width.equalTo(120)
+            }
+        } else {
+            primaryButton.setTitle("Next", for: .normal)
+        }
     }
 }
