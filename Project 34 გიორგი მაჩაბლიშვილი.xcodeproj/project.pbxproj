@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E39B6DB82C284351005D8DFE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39B6DB72C284351005D8DFE /* HomeScreenView.swift */; };
+		E39B6DBE2C285C6F005D8DFE /* EditPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39B6DBD2C285C6F005D8DFE /* EditPageController.swift */; };
 		E3AD581A2C26D1CB008D1AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD58192C26D1CB008D1AD6 /* AppDelegate.swift */; };
 		E3AD581C2C26D1CB008D1AD6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD581B2C26D1CB008D1AD6 /* SceneDelegate.swift */; };
 		E3AD581E2C26D1CB008D1AD6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD581D2C26D1CB008D1AD6 /* ViewController.swift */; };
@@ -23,10 +24,12 @@
 		E3AD58472C26DCA0008D1AD6 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3AD58432C26DCA0008D1AD6 /* Lato-Bold.ttf */; };
 		E3AD58482C26DCA0008D1AD6 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3AD58442C26DCA0008D1AD6 /* Lato-Regular.ttf */; };
 		E3AD584A2C26DD2E008D1AD6 /* UIFont+Extansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD58492C26DD2E008D1AD6 /* UIFont+Extansion.swift */; };
+		E3EB553E2C29D9EA0088914C /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EB553D2C29D9EA0088914C /* CustomViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E39B6DB72C284351005D8DFE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
+		E39B6DBD2C285C6F005D8DFE /* EditPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPageController.swift; sourceTree = "<group>"; };
 		E3AD58162C26D1CB008D1AD6 /* Project 34 გიორგი მაჩაბლიშვილი.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 34 გიორგი მაჩაბლიშვილი.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3AD58192C26D1CB008D1AD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3AD581B2C26D1CB008D1AD6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		E3AD58432C26DCA0008D1AD6 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		E3AD58442C26DCA0008D1AD6 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		E3AD58492C26DD2E008D1AD6 /* UIFont+Extansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extansion.swift"; sourceTree = "<group>"; };
+		E3EB553D2C29D9EA0088914C /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +64,26 @@
 		E39B6DB62C284333005D8DFE /* Home Screen */ = {
 			isa = PBXGroup;
 			children = (
-				E39B6DB72C284351005D8DFE /* HomeScreenView.swift */,
+				E3EB553C2C29D9CA0088914C /* CustomViewCell */,
+				E39B6DB92C285BB9005D8DFE /* HomeScreenController */,
 			);
 			path = "Home Screen";
+			sourceTree = "<group>";
+		};
+		E39B6DB92C285BB9005D8DFE /* HomeScreenController */ = {
+			isa = PBXGroup;
+			children = (
+				E39B6DB72C284351005D8DFE /* HomeScreenView.swift */,
+			);
+			path = HomeScreenController;
+			sourceTree = "<group>";
+		};
+		E39B6DBA2C285BDA005D8DFE /* EditPage */ = {
+			isa = PBXGroup;
+			children = (
+				E39B6DBD2C285C6F005D8DFE /* EditPageController.swift */,
+			);
+			path = EditPage;
 			sourceTree = "<group>";
 		};
 		E3AD580D2C26D1CB008D1AD6 = {
@@ -107,8 +128,9 @@
 		E3AD582E2C26D247008D1AD6 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				E39B6DB62C284333005D8DFE /* Home Screen */,
 				E3AD582F2C26D464008D1AD6 /* OnBoarding */,
+				E39B6DB62C284333005D8DFE /* Home Screen */,
+				E39B6DBA2C285BDA005D8DFE /* EditPage */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -173,6 +195,14 @@
 				E3AD58422C26DCA0008D1AD6 /* Lato-Thin.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E3EB553C2C29D9CA0088914C /* CustomViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				E3EB553D2C29D9EA0088914C /* CustomViewCell.swift */,
+			);
+			path = CustomViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +287,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3AD58382C26D57E008D1AD6 /* OnBoardingData.swift in Sources */,
+				E3EB553E2C29D9EA0088914C /* CustomViewCell.swift in Sources */,
 				E3AD581E2C26D1CB008D1AD6 /* ViewController.swift in Sources */,
+				E39B6DBE2C285C6F005D8DFE /* EditPageController.swift in Sources */,
 				E3AD583E2C26DAA6008D1AD6 /* OnboardingCell.swift in Sources */,
 				E39B6DB82C284351005D8DFE /* HomeScreenView.swift in Sources */,
 				E3AD581A2C26D1CB008D1AD6 /* AppDelegate.swift in Sources */,
