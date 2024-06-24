@@ -63,13 +63,15 @@ class ViewController: UIViewController {
     }()
     
     let onBoarding = [
-        OnBoardingData.init(image: .firstPageOnbording, title: "Manage your tasks", description: "You can easily manage all of your daily tasks in DoMe for free"),
-        OnBoardingData.init(image: .secondPageOnbording, title: "Create daily routine", description: "In Uptodo  you can create your personalized routine to stay productive"),
-        OnBoardingData.init(image: .thirdPageOnbording, title: "Orgonaize your tasks", description: "You can organize your daily tasks by adding your tasks into separate categories")
+        OnBoardingData
+        .init(image: .firstPageOnbording, title: "Manage your tasks", description: "You can easily manage all of your daily tasks in DoMe for free"),
+        .init(image: .secondPageOnbording, title: "Create daily routine", description: "In Uptodo  you can create your personalized routine to stay productive"),
+        .init(image: .thirdPageOnbording, title: "Orgonaize your tasks", description: "You can organize your daily tasks by adding your tasks into separate categories")
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         setup()
         setupConstraints()
@@ -90,29 +92,29 @@ class ViewController: UIViewController {
         }
         
         skipButton.snp.remakeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(54)
-            make.leading.equalTo(view.snp.leading).offset(24)
-            make.width.equalTo(35)
-            make.height.equalTo(24)
+            make.top.equalTo(view.snp.top).offset(54 * Constraint.yCoeff)
+            make.leading.equalTo(view.snp.leading).offset(24 * Constraint.xCoeff)
+            make.width.equalTo(35 * Constraint.xCoeff)
+            make.height.equalTo(24 * Constraint.yCoeff)
         }
         
         pageController.snp.remakeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(413)
+            make.top.equalTo(view.snp.top).offset(413 * Constraint.yCoeff)
             make.centerX.equalToSuperview()
         }
         
         primaryButton.snp.remakeConstraints { make in
-            make.bottom.equalTo(view.snp.bottom).offset(-62)
-            make.trailing.equalTo(view.snp.trailing).offset(-24)
-            make.width.equalTo(60)
-            make.height.equalTo(40)
+            make.bottom.equalTo(view.snp.bottom).offset(-62 * Constraint.yCoeff)
+            make.trailing.equalTo(view.snp.trailing).offset(-24 * Constraint.xCoeff)
+            make.width.equalTo(60 * Constraint.xCoeff)
+            make.height.equalTo(40 * Constraint.yCoeff)
         }
         
         backButton.snp.makeConstraints { make in
-            make.leading.equalTo(view.snp.leading).offset(24)
-            make.bottom.equalTo(view.snp.bottom).offset(-74)
-            make.width.equalTo(43)
-            make.height.equalTo(24)
+            make.leading.equalTo(view.snp.leading).offset(24 * Constraint.xCoeff)
+            make.bottom.equalTo(view.snp.bottom).offset(-74 * Constraint.yCoeff)
+            make.width.equalTo(43 * Constraint.xCoeff)
+            make.height.equalTo(24 * Constraint.yCoeff)
         }
     }
     
@@ -126,7 +128,7 @@ class ViewController: UIViewController {
             if nextIndex == onBoarding.count - 1 {
                 primaryButton.setTitle("Get Started", for: .normal)
                 primaryButton.snp.updateConstraints { make in
-                    make.width.equalTo(120)
+                    make.width.equalTo(120 * Constraint.xCoeff)
                 }
             } else {
                 primaryButton.setTitle("Next", for: .normal)
@@ -138,6 +140,11 @@ class ViewController: UIViewController {
     }
     
     @objc func didTapOnSkipButton() {
+        UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
+        navigateToHomeScreen()
+    }
+    
+    func navigateToHomeScreen() {
         let vc = HomeScreenView()
         navigationController?.pushViewController(vc, animated: false)
     }
@@ -167,7 +174,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         if nextIndex == onBoarding.count - 1 {
             primaryButton.setTitle("Get Started", for: .normal)
             primaryButton.snp.updateConstraints { make in
-                make.width.equalTo(120)
+                make.width.equalTo(120 * Constraint.xCoeff)
             }
         } else {
             primaryButton.setTitle("Next", for: .normal)

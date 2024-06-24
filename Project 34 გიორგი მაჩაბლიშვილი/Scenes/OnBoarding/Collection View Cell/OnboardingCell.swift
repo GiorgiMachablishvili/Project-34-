@@ -49,20 +49,20 @@ class OnboardingCell: UICollectionViewCell {
     
     func setupConstraints() {
         mainImage.snp.remakeConstraints { make in
-            make.top.equalTo(snp.top).offset(84)
-            make.leading.trailing.equalToSuperview().inset(81)
-            make.height.equalTo(275)
+            make.top.equalTo(snp.top).offset(84 * Constraint.yCoeff)
+            make.leading.trailing.equalToSuperview().inset(81 * Constraint.xCoeff)
+            make.height.equalTo(275 * Constraint.yCoeff)
         }
 
         taskTitle.snp.remakeConstraints { make in
-            make.top.equalTo(mainImage.snp.bottom).offset(105)
-            make.leading.trailing.equalToSuperview().inset(53)
-            make.height.equalTo(38)
+            make.top.equalTo(mainImage.snp.bottom).offset(105 * Constraint.yCoeff)
+            make.leading.trailing.equalToSuperview().inset(53 * Constraint.xCoeff)
+            make.height.equalTo(38 * Constraint.yCoeff)
         }
         
         taskDescription.snp.remakeConstraints { make in
-            make.top.equalTo(taskTitle.snp.bottom).offset(42)
-            make.leading.trailing.equalToSuperview().inset(38)
+            make.top.equalTo(taskTitle.snp.bottom).offset(42 * Constraint.yCoeff)
+            make.leading.trailing.equalToSuperview().inset(38 * Constraint.xCoeff)
         }
     }
     

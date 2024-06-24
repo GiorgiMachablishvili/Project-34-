@@ -25,6 +25,7 @@
 		E3AD58482C26DCA0008D1AD6 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3AD58442C26DCA0008D1AD6 /* Lato-Regular.ttf */; };
 		E3AD584A2C26DD2E008D1AD6 /* UIFont+Extansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD58492C26DD2E008D1AD6 /* UIFont+Extansion.swift */; };
 		E3EB553E2C29D9EA0088914C /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EB553D2C29D9EA0088914C /* CustomViewCell.swift */; };
+		E3EB55412C29ECE40088914C /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EB55402C29ECE40088914C /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E3AD58442C26DCA0008D1AD6 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		E3AD58492C26DD2E008D1AD6 /* UIFont+Extansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extansion.swift"; sourceTree = "<group>"; };
 		E3EB553D2C29D9EA0088914C /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
+		E3EB55402C29ECE40088914C /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		E3AD583F2C26DC47008D1AD6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E3EB553F2C29ECBE0088914C /* Helper */,
 				E3AD58392C26D7F1008D1AD6 /* Extension */,
 				E3AD58402C26DC56008D1AD6 /* Fonts */,
 			);
@@ -203,6 +206,14 @@
 				E3EB553D2C29D9EA0088914C /* CustomViewCell.swift */,
 			);
 			path = CustomViewCell;
+			sourceTree = "<group>";
+		};
+		E3EB553F2C29ECBE0088914C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E3EB55402C29ECE40088914C /* Constraints.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				E3EB553E2C29D9EA0088914C /* CustomViewCell.swift in Sources */,
 				E3AD581E2C26D1CB008D1AD6 /* ViewController.swift in Sources */,
 				E39B6DBE2C285C6F005D8DFE /* EditPageController.swift in Sources */,
+				E3EB55412C29ECE40088914C /* Constraints.swift in Sources */,
 				E3AD583E2C26DAA6008D1AD6 /* OnboardingCell.swift in Sources */,
 				E39B6DB82C284351005D8DFE /* HomeScreenView.swift in Sources */,
 				E3AD581A2C26D1CB008D1AD6 /* AppDelegate.swift in Sources */,

@@ -67,15 +67,14 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
         tableView.reloadData()
     }
     
-    
     var tasks: [(title: String, description: String)] = []
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setupConstraints()
     }
-    
+
     func setup() {
         view.addSubview(tableView)
         view.addSubview(titleLabel)
@@ -92,32 +91,32 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
         
         titleLabel.snp.remakeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
-            make.top.equalTo(view.snp.top).offset(57)
-            make.height.equalTo(42)
+            make.top.equalTo(view.snp.top).offset(57 * Constraint.yCoeff)
+            make.height.equalTo(42 * Constraint.yCoeff)
         }
         
         mainImage.snp.remakeConstraints { make in
-            make.top.equalTo(titleLabel.snp.top).offset(75)
+            make.top.equalTo(titleLabel.snp.top).offset(75 * Constraint.yCoeff)
             make.centerX.equalTo(view.snp.centerX)
-            make.height.width.equalTo(227)
+            make.height.width.equalTo(227 * Constraint.yCoeff)
         }
         
         questionLabel.snp.remakeConstraints { make in
-            make.top.equalTo(mainImage.snp.bottom).offset(10)
+            make.top.equalTo(mainImage.snp.bottom).offset(10 * Constraint.yCoeff)
             make.centerX.equalTo(view.snp.centerX)
-            make.height.equalTo(30)
+            make.height.equalTo(30 * Constraint.yCoeff)
         }
         
         infoLabel.snp.remakeConstraints { make in
-            make.top.equalTo(questionLabel.snp.bottom).offset(10)
+            make.top.equalTo(questionLabel.snp.bottom).offset(10 * Constraint.yCoeff)
             make.centerX.equalTo(view.snp.centerX)
-            make.height.equalTo(24)
+            make.height.equalTo(24 * Constraint.yCoeff)
         }
         
         plushButton.snp.remakeConstraints { make in
-            make.trailing.equalTo(view.snp.trailing).offset(-20)
-            make.bottom.equalTo(view.snp.bottom).offset(-60)
-            make.width.height.equalTo(64)
+            make.trailing.equalTo(view.snp.trailing).offset(-20 * Constraint.xCoeff)
+            make.bottom.equalTo(view.snp.bottom).offset(-60 * Constraint.yCoeff)
+            make.width.height.equalTo(64 * Constraint.xCoeff)
         }
     }
     
@@ -143,6 +142,10 @@ extension HomeScreenView:  UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 90
     }
+    
+    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        <#code#>
+    //    }
 }

@@ -26,7 +26,7 @@ class CustomViewCell: UITableViewCell {
         view.numberOfLines = 0
         view.textAlignment = .left
         view.textColor = .red
-
+        
         return view
     }()
     
@@ -47,15 +47,14 @@ class CustomViewCell: UITableViewCell {
     
     func setupConstraints() {
         titleLabel.snp.remakeConstraints { make in
-            make.top.equalTo(snp.top).offset(12)
-            make.leading.equalTo(snp.leading).offset(38)
-            make.height.equalTo(21)
+            make.top.equalTo(snp.top).offset(12 * Constraint.yCoeff)
+            make.leading.equalTo(snp.leading).offset(38 * Constraint.xCoeff)
+            make.height.equalTo(21 * Constraint.yCoeff)
         }
         
         descriptionLabel.snp.remakeConstraints { make in
-            make.top.equalTo( titleLabel.snp.bottom).offset(6)
-            make.leading.equalTo(snp.leading).offset(38)
-//            make.height.equalTo(21)
+            make.top.equalTo( titleLabel.snp.bottom).offset(6 * Constraint.yCoeff)
+            make.leading.equalTo(snp.leading).offset(38 * Constraint.xCoeff)
         }
     }
     

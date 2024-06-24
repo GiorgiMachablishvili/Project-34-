@@ -12,7 +12,7 @@ protocol EditPageControllerDelegate: AnyObject {
     func didAddTask(title: String, description: String)
 }
 
-class EditPageController: UIViewController /*UITextFieldDelegate*/ {
+class EditPageController: UIViewController {
     
     weak var delegate: EditPageControllerDelegate?
     
@@ -28,10 +28,8 @@ class EditPageController: UIViewController /*UITextFieldDelegate*/ {
     
     private lazy var titleTextField: UITextField = {
         let view = UITextField(frame: .zero)
-        view.placeholder = "Title"
         view.textColor = UIColor(hexString: "FFFFFF")
         view.layer.borderColor = UIColor(hexString: "979797").cgColor
-//        view.delegate = self
         view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 5.0
         view.keyboardType = .alphabet
@@ -42,10 +40,8 @@ class EditPageController: UIViewController /*UITextFieldDelegate*/ {
     
     private lazy var descriptionTextField: UITextField = {
         let view = UITextField(frame: .zero)
-        view.placeholder = "Description"
         view.textColor = UIColor(hexString: "FFFFFF")
         view.layer.borderColor = UIColor(hexString: "979797").cgColor
-//        view.delegate = self
         view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 5.0
         view.keyboardType = .alphabet
@@ -62,13 +58,11 @@ class EditPageController: UIViewController /*UITextFieldDelegate*/ {
         return view
     }()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setupConstraints()
         view.backgroundColor = UIColor(hexString: "363636")
-//        tabGesture()
     }
     
     func setup() {
@@ -80,43 +74,33 @@ class EditPageController: UIViewController /*UITextFieldDelegate*/ {
     
     func setupConstraints() {
         titleLabel.snp.remakeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(25)
-            make.leading.equalTo(view.snp.leading).offset(25)
-            make.height.equalTo(30)
+            make.top.equalTo(view.snp.top).offset(25 * Constraint.yCoeff)
+            make.leading.equalTo(view.snp.leading).offset(25 * Constraint.xCoeff)
+            make.height.equalTo(30 * Constraint.yCoeff)
         }
         
         titleTextField.snp.remakeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(16)
-            make.leading.trailing.equalToSuperview().inset(24)
-            make.height.equalTo(40)
+            make.top.equalTo(titleLabel.snp.bottom).offset(16 * Constraint.yCoeff)
+//            make.leading.trailing.equalToSuperview().inset(24 * Constraint.xCoeff)
+            make.leading.equalTo(view.snp.leading).offset(24 * Constraint.xCoeff)
+            make.trailing.equalTo(view.snp.trailing).offset(-24 * Constraint.xCoeff)
+            make.height.equalTo(40 * Constraint.yCoeff)
         }
         
         descriptionTextField.snp.remakeConstraints { make in
-            make.top.equalTo(titleTextField.snp.bottom).offset(11)
-            make.leading.trailing.equalToSuperview().inset(24)
-            make.height.equalTo(40)
+            make.top.equalTo(titleTextField.snp.bottom).offset(11 * Constraint.yCoeff)
+//            make.leading.trailing.equalToSuperview().inset(24 * Constraint.xCoeff)
+            make.leading.equalTo(view.snp.leading).offset(24 * Constraint.xCoeff)
+            make.trailing.equalTo(view.snp.trailing).offset(-24 * Constraint.xCoeff)
+            make.height.equalTo(40 * Constraint.yCoeff)
         }
         
         addInfoButton.snp.remakeConstraints { make in
-            make.top.equalTo(descriptionTextField.snp.bottom).offset(19)
-            make.trailing.equalTo(view.snp.trailing).offset(-24)
-            make.width.height.equalTo(24)
+            make.top.equalTo(descriptionTextField.snp.bottom).offset(19 * Constraint.yCoeff)
+            make.trailing.equalTo(view.snp.trailing).offset(-24 * Constraint.xCoeff)
+            make.width.height.equalTo(24 * Constraint.xCoeff)
         }
     }
-    
-//    func tabGesture() {
-//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-//        view.addGestureRecognizer(tapGesture)
-//    }
-//    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//            textField.resignFirstResponder()
-//            return true
-//        }
-//    
-//    @objc func dismissKeyboard() {
-//           view.endEditing(true)
-//       }
     
     @objc func didTapOnAddInfoButton() {
         guard let title = titleTextField.text, !title.isEmpty,
@@ -130,5 +114,5 @@ class EditPageController: UIViewController /*UITextFieldDelegate*/ {
 
 
 
-    
-   
+
+
