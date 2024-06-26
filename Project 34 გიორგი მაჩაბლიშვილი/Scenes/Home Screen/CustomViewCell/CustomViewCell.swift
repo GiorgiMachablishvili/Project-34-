@@ -3,7 +3,6 @@
 //  Project 34 გიორგი მაჩაბლიშვილი
 //
 //  Created by Gio's Mac on 24.06.24.
-//
 
 import UIKit
 import SnapKit
@@ -15,7 +14,7 @@ class CustomViewCell: UITableViewCell {
         view.font = UIFont.latoBold(size: 16)
         view.numberOfLines = 1
         view.textAlignment = .left
-        view.textColor = .red
+        view.textColor = UIColor(hexString: "FFFFFF")
         return view
     }()
     
@@ -25,8 +24,7 @@ class CustomViewCell: UITableViewCell {
         view.font = UIFont.latoRegular(size: 14)
         view.numberOfLines = 0
         view.textAlignment = .left
-        view.textColor = .red
-        
+        view.textColor = UIColor(hexString: "FFFFFF")
         return view
     }()
     
@@ -34,6 +32,7 @@ class CustomViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()
         setupConstraints()
+        backgroundColor = UIColor(hexString: "363636")
     }
     
     required init?(coder: NSCoder) {
