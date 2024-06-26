@@ -8,6 +8,7 @@ import UIKit
 import SnapKit
 
 class HomeScreenView: UIViewController, EditPageControllerDelegate {
+    //MARK: -UI components
     private lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero)
         view.backgroundColor = UIColor(hexString: "121212")
@@ -51,12 +52,14 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
         updateViewVisibility()
     }
     
+    //MARK: setup ui components
     func setup() {
         view.addSubview(tableView)
         view.addSubview(homeHeaderView)
         view.addSubview(plushButton)
     }
     
+    //MARK: setup constraints
     func setupConstraints() {
         tableView.snp.remakeConstraints { make in
             make.edges.equalToSuperview()
@@ -73,12 +76,14 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
         }
     }
     
+    //MARK: update view visibility if task array is empty show tableView if not show homeHeaderView
     func updateViewVisibility() {
         let isEmpty = tasks.isEmpty
         homeHeaderView.isHidden = isEmpty
         tableView.isHidden = !isEmpty
     }
     
+    //MARK: tap on plus button
     @objc func didTapOnPlusButton() {
         let editVC = EditPageController()
         editVC.delegate = self

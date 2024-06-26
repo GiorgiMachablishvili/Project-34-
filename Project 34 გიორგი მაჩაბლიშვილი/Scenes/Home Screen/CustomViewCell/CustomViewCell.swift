@@ -8,6 +8,7 @@ import UIKit
 import SnapKit
 
 class CustomViewCell: UITableViewCell {
+    //MARK: -UI components
     private lazy var titleLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.textColor = UIColor(hexString: "FFFFFF")
@@ -39,11 +40,13 @@ class CustomViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: setup ui components
     func setup() {
         addSubview(titleLabel)
         addSubview(descriptionLabel)
     }
     
+    //MARK: setup constraints
     func setupConstraints() {
         titleLabel.snp.remakeConstraints { make in
             make.top.equalTo(snp.top).offset(12 * Constraint.yCoeff)
@@ -57,6 +60,7 @@ class CustomViewCell: UITableViewCell {
         }
     }
     
+    //MARK: updata content
     func updateContent(title: String, description: String) {
         titleLabel.text = title
         descriptionLabel.text = description

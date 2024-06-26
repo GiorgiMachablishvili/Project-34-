@@ -8,6 +8,7 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
+    //MARK: -UI components
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -78,6 +79,7 @@ class ViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
+    //MARK: setup ui components
     func setup() {
         view.addSubview(collectionView)
         view.addSubview(pageController)
@@ -86,6 +88,7 @@ class ViewController: UIViewController {
         view.addSubview(backButton)
     }
     
+    //MARK: setup constraints
     func setupConstraints() {
         collectionView.snp.remakeConstraints { make in
             make.edges.equalToSuperview()
@@ -118,6 +121,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: tab primary button
     @objc func didTapOnPrimaryButton() {
         let nextIndex = pageController.currentPage + 1
         if nextIndex < onBoarding.count {
@@ -139,16 +143,17 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: skip onboarding page and go home page
     @objc func didTapOnSkipButton() {
         UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
         navigateToHomeScreen()
     }
-    
     func navigateToHomeScreen() {
         let vc = HomeScreenView()
         navigationController?.pushViewController(vc, animated: false)
     }
     
+    //MARK: tab back button
     @objc func didTapOnBackButton() {
         print("back")
     }

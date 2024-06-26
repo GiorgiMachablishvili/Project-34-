@@ -17,6 +17,7 @@ class EditPageController: UIViewController {
     var taskTitle: String?
     var taskDescription: String?
     
+    //MARK: -UI components
     private lazy var titleLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.textColor = UIColor(hexString: "FFFFFF")
@@ -70,6 +71,7 @@ class EditPageController: UIViewController {
         view.backgroundColor = UIColor(hexString: "363636")
     }
     
+    //MARK: setup ui components
     func setup() {
         view.addSubview(titleLabel)
         view.addSubview(titleTextField)
@@ -77,6 +79,7 @@ class EditPageController: UIViewController {
         view.addSubview(addInfoButton)
     }
     
+    //MARK: setup constraints
     func setupConstraints() {
         titleLabel.snp.remakeConstraints { make in
             make.top.equalTo(view.snp.top).offset(25 * Constraint.yCoeff)
@@ -105,6 +108,7 @@ class EditPageController: UIViewController {
         }
     }
     
+    //MARK: tap on add button
     @objc func didTapOnAddInfoButton() {
         guard let title = titleTextField.text, !title.isEmpty,
               let description = descriptionTextField.text, !description.isEmpty else {

@@ -14,6 +14,7 @@ class HomeView: UIView, EditPageControllerDelegate {
         delegate?.didAddTask(title: title, description: description)
     }
     
+    //MARK: -UI components
     private lazy var titleLabel: UILabel = {
         let view = UILabel(frame: .zero)
         view.textColor = UIColor(hexString: "FFFFFF")
@@ -60,6 +61,7 @@ class HomeView: UIView, EditPageControllerDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: setup ui components
     func setup() {
         addSubview(titleLabel)
         addSubview(mainImage)
@@ -67,6 +69,7 @@ class HomeView: UIView, EditPageControllerDelegate {
         addSubview(infoLabel)
     }
     
+    //MARK: setup constraints
     func setupConstraints() {
         titleLabel.snp.remakeConstraints { make in
             make.centerX.equalTo(snp.centerX)

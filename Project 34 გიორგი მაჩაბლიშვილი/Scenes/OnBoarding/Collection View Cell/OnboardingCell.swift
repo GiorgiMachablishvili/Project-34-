@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class OnboardingCell: UICollectionViewCell {
+    //MARK: -UI components
     private lazy var mainImage: UIImageView = {
         let view = UIImageView(frame: .zero)
         return view
@@ -41,12 +42,14 @@ class OnboardingCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: setup ui components
     func setup() {
         addSubview(mainImage)
         addSubview(taskTitle)
         addSubview(taskDescription)
     }
     
+    //MARK: setup constraints
     func setupConstraints() {
         mainImage.snp.remakeConstraints { make in
             make.top.equalTo(snp.top).offset(84 * Constraint.yCoeff)
@@ -66,6 +69,7 @@ class OnboardingCell: UICollectionViewCell {
         }
     }
     
+    //MARK: data configure
     func configure(with data: OnBoardingData) {
         mainImage.image = data.image
         taskTitle.text = data.title
