@@ -3,7 +3,6 @@
 //  Project 34 გიორგი მაჩაბლიშვილი
 //
 //  Created by Gio's Mac on 23.06.24.
-//
 
 import UIKit
 import SnapKit
@@ -13,8 +12,10 @@ protocol EditPageControllerDelegate: AnyObject {
 }
 
 class EditPageController: UIViewController {
-    
     weak var delegate: EditPageControllerDelegate?
+    
+    var taskTitle: String?
+    var taskDescription: String?
     
     private lazy var titleLabel: UILabel = {
         let view = UILabel(frame: .zero)
@@ -32,9 +33,11 @@ class EditPageController: UIViewController {
         view.layer.borderColor = UIColor(hexString: "979797").cgColor
         view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 5.0
+        view.textAlignment = .left
         view.keyboardType = .alphabet
         let placeholderColor = UIColor(hexString: "FFFFFF")
         view.attributedPlaceholder = NSAttributedString(string: "   Title", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
+        view.text = taskTitle
         return view
     }()
     
@@ -44,9 +47,11 @@ class EditPageController: UIViewController {
         view.layer.borderColor = UIColor(hexString: "979797").cgColor
         view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 5.0
+        view.textAlignment = .left
         view.keyboardType = .alphabet
         let placeholderColor = UIColor(hexString: "FFFFFF")
         view.attributedPlaceholder = NSAttributedString(string: "   Description", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
+        view.text = taskDescription
         return view
     }()
     
@@ -81,7 +86,6 @@ class EditPageController: UIViewController {
         
         titleTextField.snp.remakeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(16 * Constraint.yCoeff)
-//            make.leading.trailing.equalToSuperview().inset(24 * Constraint.xCoeff)
             make.leading.equalTo(view.snp.leading).offset(24 * Constraint.xCoeff)
             make.trailing.equalTo(view.snp.trailing).offset(-24 * Constraint.xCoeff)
             make.height.equalTo(40 * Constraint.yCoeff)
@@ -89,7 +93,6 @@ class EditPageController: UIViewController {
         
         descriptionTextField.snp.remakeConstraints { make in
             make.top.equalTo(titleTextField.snp.bottom).offset(11 * Constraint.yCoeff)
-//            make.leading.trailing.equalToSuperview().inset(24 * Constraint.xCoeff)
             make.leading.equalTo(view.snp.leading).offset(24 * Constraint.xCoeff)
             make.trailing.equalTo(view.snp.trailing).offset(-24 * Constraint.xCoeff)
             make.height.equalTo(40 * Constraint.yCoeff)
@@ -109,6 +112,13 @@ class EditPageController: UIViewController {
         }
         delegate?.didAddTask(title: title, description: description)
         dismiss(animated: true, completion: nil)
+    }
+    
+    func configureWithTask(title: String, description: String) {
+        taskTitle = title
+        taskDescription = description
+        titleTextField.text = title
+        descriptionTextField.text = description
     }
 }
 

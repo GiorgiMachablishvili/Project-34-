@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E376C26A2C2A98B6007BB6D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376C2692C2A98B6007BB6D2 /* HomeView.swift */; };
 		E39B6DB82C284351005D8DFE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39B6DB72C284351005D8DFE /* HomeScreenView.swift */; };
 		E39B6DBE2C285C6F005D8DFE /* EditPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39B6DBD2C285C6F005D8DFE /* EditPageController.swift */; };
 		E3AD581A2C26D1CB008D1AD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3AD58192C26D1CB008D1AD6 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E376C2692C2A98B6007BB6D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E39B6DB72C284351005D8DFE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		E39B6DBD2C285C6F005D8DFE /* EditPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPageController.swift; sourceTree = "<group>"; };
 		E3AD58162C26D1CB008D1AD6 /* Project 34 გიორგი მაჩაბლიშვილი.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project 34 გიორგი მაჩაბლიშვილი.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,10 +65,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E376C2682C2A9894007BB6D2 /* Home Screen View */ = {
+			isa = PBXGroup;
+			children = (
+				E376C2692C2A98B6007BB6D2 /* HomeView.swift */,
+			);
+			path = "Home Screen View";
+			sourceTree = "<group>";
+		};
 		E39B6DB62C284333005D8DFE /* Home Screen */ = {
 			isa = PBXGroup;
 			children = (
 				E3EB553C2C29D9CA0088914C /* CustomViewCell */,
+				E376C2682C2A9894007BB6D2 /* Home Screen View */,
 				E39B6DB92C285BB9005D8DFE /* HomeScreenController */,
 			);
 			path = "Home Screen";
@@ -111,8 +122,6 @@
 				E3AD582E2C26D247008D1AD6 /* Scenes */,
 				E3AD58302C26D49D008D1AD6 /* Domain */,
 				E3AD583F2C26DC47008D1AD6 /* Resources */,
-				E3AD58222C26D1CE008D1AD6 /* Assets.xcassets */,
-				E3AD58242C26D1CE008D1AD6 /* LaunchScreen.storyboard */,
 				E3AD58272C26D1CE008D1AD6 /* Info.plist */,
 			);
 			path = "Project 34 გიორგი მაჩაბლიშვილი";
@@ -182,9 +191,11 @@
 		E3AD583F2C26DC47008D1AD6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E3EB553F2C29ECBE0088914C /* Helper */,
-				E3AD58392C26D7F1008D1AD6 /* Extension */,
 				E3AD58402C26DC56008D1AD6 /* Fonts */,
+				E3AD58392C26D7F1008D1AD6 /* Extension */,
+				E3EB553F2C29ECBE0088914C /* Helper */,
+				E3AD58242C26D1CE008D1AD6 /* LaunchScreen.storyboard */,
+				E3AD58222C26D1CE008D1AD6 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -306,6 +317,7 @@
 				E39B6DB82C284351005D8DFE /* HomeScreenView.swift in Sources */,
 				E3AD581A2C26D1CB008D1AD6 /* AppDelegate.swift in Sources */,
 				E3AD581C2C26D1CB008D1AD6 /* SceneDelegate.swift in Sources */,
+				E376C26A2C2A98B6007BB6D2 /* HomeView.swift in Sources */,
 				E3AD584A2C26DD2E008D1AD6 /* UIFont+Extansion.swift in Sources */,
 				E3AD583B2C26D81E008D1AD6 /* UIColor+Extension.swift in Sources */,
 			);

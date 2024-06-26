@@ -3,7 +3,6 @@
 //  Project 34 გიორგი მაჩაბლიშვილი
 //
 //  Created by Gio's Mac on 23.06.24.
-//
 
 import UIKit
 import SnapKit
@@ -18,39 +17,9 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
-        let view = UILabel(frame: .zero)
-        view.textColor = UIColor(hexString: "FFFFFF")
-        view.font = UIFont.latoRegular(size: 20)
-        view.text = "To-Do"
-        view.textAlignment = .center
-        view.numberOfLines = 1
-        return view
-    }()
-    
-    private lazy var mainImage: UIImageView = {
-        let view = UIImageView(frame: .zero)
-        view.image = UIImage(named: "toDo")
-        return view
-    }()
-    
-    private lazy var questionLabel: UILabel = {
-        let view = UILabel(frame: .zero)
-        view.textColor = UIColor(hexString: "FFFFFF")
-        view.font = UIFont.latoRegular(size: 20)
-        view.text = "What do you want to do today?"
-        view.textAlignment = .center
-        view.numberOfLines = 1
-        return view
-    }()
-    
-    private lazy var infoLabel: UILabel = {
-        let view = UILabel(frame: .zero)
-        view.textColor = UIColor(hexString: "FFFFFF")
-        view.font = UIFont.latoRegular(size: 16)
-        view.text = "Tap + to add your tasks"
-        view.textAlignment = .center
-        view.numberOfLines = 1
+    private lazy var homeHeaderView: HomeView = {
+        let view = HomeView(frame: .zero)
+        view.delegate = self
         return view
     }()
     
@@ -63,24 +32,28 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
     }()
     
     func didAddTask(title: String, description: String) {
-        tasks.append((title: title, description: description))
-        tableView.reloadData()
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            tasks[selectedIndexPath.row] = (title: title, description: description)
+            tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+        } else {
+            tasks.append((title: title, description: description))
+            tableView.reloadData()
+        }
     }
     
     var tasks: [(title: String, description: String)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setup()
         setupConstraints()
+        updateViewVisibility()
     }
-
+    
     func setup() {
         view.addSubview(tableView)
-        view.addSubview(titleLabel)
-        view.addSubview(mainImage)
-        view.addSubview(questionLabel)
-        view.addSubview(infoLabel)
+        view.addSubview(homeHeaderView)
         view.addSubview(plushButton)
     }
     
@@ -89,28 +62,8 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
             make.edges.equalToSuperview()
         }
         
-        titleLabel.snp.remakeConstraints { make in
-            make.centerX.equalTo(view.snp.centerX)
-            make.top.equalTo(view.snp.top).offset(57 * Constraint.yCoeff)
-            make.height.equalTo(42 * Constraint.yCoeff)
-        }
-        
-        mainImage.snp.remakeConstraints { make in
-            make.top.equalTo(titleLabel.snp.top).offset(75 * Constraint.yCoeff)
-            make.centerX.equalTo(view.snp.centerX)
-            make.height.width.equalTo(227 * Constraint.yCoeff)
-        }
-        
-        questionLabel.snp.remakeConstraints { make in
-            make.top.equalTo(mainImage.snp.bottom).offset(10 * Constraint.yCoeff)
-            make.centerX.equalTo(view.snp.centerX)
-            make.height.equalTo(30 * Constraint.yCoeff)
-        }
-        
-        infoLabel.snp.remakeConstraints { make in
-            make.top.equalTo(questionLabel.snp.bottom).offset(10 * Constraint.yCoeff)
-            make.centerX.equalTo(view.snp.centerX)
-            make.height.equalTo(24 * Constraint.yCoeff)
+        homeHeaderView.snp.remakeConstraints { make in
+            make.edges.equalToSuperview()
         }
         
         plushButton.snp.remakeConstraints { make in
@@ -118,6 +71,12 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
             make.bottom.equalTo(view.snp.bottom).offset(-60 * Constraint.yCoeff)
             make.width.height.equalTo(64 * Constraint.xCoeff)
         }
+    }
+    
+    func updateViewVisibility() {
+        let isEmpty = tasks.isEmpty
+        homeHeaderView.isHidden = isEmpty
+        tableView.isHidden = !isEmpty
     }
     
     @objc func didTapOnPlusButton() {
@@ -145,7 +104,33 @@ extension HomeScreenView:  UITableViewDelegate, UITableViewDataSource {
         return 90
     }
     
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        <#code#>
-    //    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let task = tasks[indexPath.row]
+        let editVC = EditPageController()
+        editVC.delegate = self
+        editVC.configureWithTask(title: task.title, description: task.description)
+        navigationController?.present(editVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor(hexString: "121212")
+        
+        let headerLabel = UILabel()
+        headerLabel.text = "Calendar"
+        headerLabel.textColor = UIColor(hexString: "FFFFFF")
+        headerLabel.font = UIFont.latoBlack(size: 20)
+        headerLabel.textAlignment = .center
+        
+        headerView.addSubview(headerLabel)
+        
+        headerLabel.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
+        }
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
 }
