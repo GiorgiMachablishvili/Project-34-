@@ -51,6 +51,7 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
         
         setup()
         setupConstraints()
+//        setupHalfHeightViewController()
     }
     
     //MARK: setup ui components
@@ -69,13 +70,28 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
         homeHeaderView.snp.remakeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
+
         plushButton.snp.remakeConstraints { make in
             make.trailing.equalTo(view.snp.trailing).offset(-20 * Constraint.xCoeff)
             make.bottom.equalTo(view.snp.bottom).offset(-60 * Constraint.yCoeff)
             make.width.height.equalTo(64 * Constraint.xCoeff)
         }
     }
+    
+    //MARK: half height view
+//    private func setupHalfHeightViewController() {
+//            let editPageVC = EditPageController()
+////            addChild(editPageVC)
+//            view.addSubview(editPageVC.view)
+//            
+//            //MARK: Constraints for half the height of the screen
+//            editPageVC.view.snp.remakeConstraints { make in
+//                make.leading.trailing.equalToSuperview()
+//                make.bottom.equalToSuperview()
+//                make.height.equalTo(view.snp.height).multipliedBy(0.7)
+//            }
+//            editPageVC.didMove(toParent: self)
+//        }
     
     //MARK: update view visibility if task array is empty show tableView if not show homeHeaderView
     func updateViewVisibility() {
@@ -124,6 +140,9 @@ extension HomeScreenView:  UITableViewDelegate, UITableViewDataSource {
         
         let headerLabel = UILabel()
         headerLabel.text = "Calendar"
+        let isEmpty = tasks.isEmpty
+        headerLabel.isHidden = !isEmpty
+        headerLabel.isHidden = isEmpty
         headerLabel.textColor = UIColor(hexString: "FFFFFF")
         headerLabel.font = UIFont.latoBlack(size: 20)
         headerLabel.textAlignment = .center

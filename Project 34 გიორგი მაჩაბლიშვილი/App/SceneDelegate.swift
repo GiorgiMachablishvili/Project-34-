@@ -14,6 +14,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+//        let window = UIWindow(windowScene: windowScene)
+//        let hasSeenOnboarding = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
+//        let initialViewController: UIViewController
+//        if hasSeenOnboarding {
+//            initialViewController = HomeScreenView()
+//        } else {
+//            initialViewController = ViewController()
+//        }
+//        let navigationController = UINavigationController(rootViewController: initialViewController)
+//        window.rootViewController = navigationController
+//        self.window = window
+//        window.makeKeyAndVisible()
+        
         let window = UIWindow(windowScene: windowScene)
         let viewController = ViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
@@ -21,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
     }
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

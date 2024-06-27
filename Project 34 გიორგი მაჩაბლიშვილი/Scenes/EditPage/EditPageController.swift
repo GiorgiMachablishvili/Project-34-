@@ -75,6 +75,7 @@ class EditPageController: UIViewController {
         setup()
         setupConstraints()
         view.backgroundColor = UIColor(hexString: "363636")
+        setupGestureRecognizer()
     }
     
     //MARK: setup ui components
@@ -112,6 +113,17 @@ class EditPageController: UIViewController {
             make.trailing.equalTo(view.snp.trailing).offset(-24 * Constraint.xCoeff)
             make.width.height.equalTo(24 * Constraint.xCoeff)
         }
+    }
+    
+    //MARK: setup gesture recognizer
+    func setupGestureRecognizer() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     //MARK: tap on add button

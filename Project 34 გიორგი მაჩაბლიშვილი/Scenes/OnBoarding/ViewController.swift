@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     
     let onBoarding = [
         OnBoardingData
-        .init(image: .firstPageOnbording, title: "Manage your tasks", description: "You can easily manage all of your daily tasks in DoMe for free"),
+            .init(image: .firstPageOnbording, title: "Manage your tasks", description: "You can easily manage all of your daily tasks in DoMe for free"),
         .init(image: .secondPageOnbording, title: "Create daily routine", description: "In Uptodo  you can create your personalized routine to stay productive"),
         .init(image: .thirdPageOnbording, title: "Orgonaize your tasks", description: "You can organize your daily tasks by adding your tasks into separate categories")
     ]
@@ -128,15 +128,6 @@ class ViewController: UIViewController {
             let indexPath = IndexPath(item: nextIndex, section: 0)
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             pageController.currentPage = nextIndex
-            
-            if nextIndex == onBoarding.count - 1 {
-                primaryButton.setTitle("Get Started", for: .normal)
-                primaryButton.snp.updateConstraints { make in
-                    make.width.equalTo(120 * Constraint.xCoeff)
-                }
-            } else {
-                primaryButton.setTitle("Next", for: .normal)
-            }
         } else {
             let vc = HomeScreenView()
             navigationController?.pushViewController(vc, animated: false)
@@ -145,7 +136,8 @@ class ViewController: UIViewController {
     
     //MARK: skip onboarding page and go home page
     @objc func didTapOnSkipButton() {
-        UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
+        let userDefault = UserDefaults.standard
+        userDefault.set(true, forKey: "hasSeenOnboarding")
         navigateToHomeScreen()
     }
     func navigateToHomeScreen() {
@@ -155,7 +147,12 @@ class ViewController: UIViewController {
     
     //MARK: tab back button
     @objc func didTapOnBackButton() {
-        print("back")
+        let previousIndex = pageController.currentPage - 1
+        if previousIndex >= 0 {
+            let indexPath = IndexPath(item: previousIndex, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            pageController.currentPage = previousIndex
+        }
     }
 }
 
@@ -183,6 +180,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             }
         } else {
             primaryButton.setTitle("Next", for: .normal)
+            primaryButton.snp.updateConstraints { make in
+                make.width.equalTo(60 * Constraint.xCoeff)
+            }
         }
     }
 }
