@@ -51,7 +51,6 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
         
         setup()
         setupConstraints()
-//        updateViewVisibility()
     }
     
     //MARK: setup ui components
@@ -135,6 +134,18 @@ extension HomeScreenView:  UITableViewDelegate, UITableViewDataSource {
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0))
         }
         return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tasks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            updateViewVisibility()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
