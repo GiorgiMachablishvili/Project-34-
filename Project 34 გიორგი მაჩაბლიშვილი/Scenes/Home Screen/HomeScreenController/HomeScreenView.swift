@@ -8,6 +8,9 @@ import UIKit
 import SnapKit
 
 class HomeScreenView: UIViewController, EditPageControllerDelegate {
+    
+    var tasks: [Task] = []
+    
     //MARK: -UI components
     private lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero)
@@ -32,24 +35,23 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
         return view
     }()
     
-    func didAddTask(title: String, description: String) {
+    func didAddTask(_ task: Task) {
         if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            tasks[selectedIndexPath.row] = (title: title, description: description)
+            tasks[selectedIndexPath.row] = task
             tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
         } else {
-            tasks.append((title: title, description: description))
+            tasks.append(task)
             tableView.reloadData()
         }
+        updateViewVisibility()
     }
-    
-    var tasks: [(title: String, description: String)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setup()
         setupConstraints()
-        updateViewVisibility()
+//        updateViewVisibility()
     }
     
     //MARK: setup ui components
@@ -79,8 +81,8 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
     //MARK: update view visibility if task array is empty show tableView if not show homeHeaderView
     func updateViewVisibility() {
         let isEmpty = tasks.isEmpty
-        homeHeaderView.isHidden = isEmpty
-        tableView.isHidden = !isEmpty
+        homeHeaderView.isHidden = !isEmpty
+        tableView.isHidden = isEmpty
     }
     
     //MARK: tap on plus button

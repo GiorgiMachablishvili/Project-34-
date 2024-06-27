@@ -8,16 +8,15 @@ import UIKit
 import SnapKit
 
 class HomeView: UIView, EditPageControllerDelegate {
-    weak var delegate: EditPageControllerDelegate?
-    
-    func didAddTask(title: String, description: String) {
-        delegate?.didAddTask(title: title, description: description)
+    func didAddTask(_ task: Task) {
     }
+    
+    weak var delegate: EditPageControllerDelegate?
     
     //MARK: -UI components
     private lazy var titleLabel: UILabel = {
         let view = UILabel(frame: .zero)
-        view.textColor = UIColor(hexString: "FFFFFF")
+        view.textColor = UIColor(hexString: "FFFFFF").withAlphaComponent(0.87)
         view.font = UIFont.latoRegular(size: 20)
         view.text = "To-Do"
         view.textAlignment = .center
@@ -33,7 +32,7 @@ class HomeView: UIView, EditPageControllerDelegate {
     
     private lazy var questionLabel: UILabel = {
         let view = UILabel(frame: .zero)
-        view.textColor = UIColor(hexString: "FFFFFF")
+        view.textColor = UIColor(hexString: "FFFFFF").withAlphaComponent(0.87)
         view.font = UIFont.latoRegular(size: 20)
         view.text = "What do you want to do today?"
         view.textAlignment = .center
@@ -43,7 +42,7 @@ class HomeView: UIView, EditPageControllerDelegate {
     
     private lazy var infoLabel: UILabel = {
         let view = UILabel(frame: .zero)
-        view.textColor = UIColor(hexString: "FFFFFF")
+        view.textColor = UIColor(hexString: "FFFFFF").withAlphaComponent(0.87)
         view.font = UIFont.latoRegular(size: 16)
         view.text = "Tap + to add your tasks"
         view.textAlignment = .center

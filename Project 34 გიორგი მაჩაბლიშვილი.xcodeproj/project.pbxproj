@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E36F946A2C2D6A96003CDA7B /* Task Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36F94692C2D6A96003CDA7B /* Task Struct.swift */; };
 		E376C26A2C2A98B6007BB6D2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E376C2692C2A98B6007BB6D2 /* HomeView.swift */; };
 		E39B6DB82C284351005D8DFE /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39B6DB72C284351005D8DFE /* HomeScreenView.swift */; };
 		E39B6DBE2C285C6F005D8DFE /* EditPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39B6DBD2C285C6F005D8DFE /* EditPageController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E36F94692C2D6A96003CDA7B /* Task Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task Struct.swift"; sourceTree = "<group>"; };
 		E376C2692C2A98B6007BB6D2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E39B6DB72C284351005D8DFE /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
 		E39B6DBD2C285C6F005D8DFE /* EditPageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPageController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E36F94682C2D6A70003CDA7B /* Task Struckt */ = {
+			isa = PBXGroup;
+			children = (
+				E36F94692C2D6A96003CDA7B /* Task Struct.swift */,
+			);
+			path = "Task Struckt";
+			sourceTree = "<group>";
+		};
 		E376C2682C2A9894007BB6D2 /* Home Screen View */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +168,7 @@
 		E3AD58302C26D49D008D1AD6 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				E36F94682C2D6A70003CDA7B /* Task Struckt */,
 				E3AD58362C26D54A008D1AD6 /* Api struct */,
 			);
 			path = Domain;
@@ -320,6 +331,7 @@
 				E376C26A2C2A98B6007BB6D2 /* HomeView.swift in Sources */,
 				E3AD584A2C26DD2E008D1AD6 /* UIFont+Extansion.swift in Sources */,
 				E3AD583B2C26D81E008D1AD6 /* UIColor+Extension.swift in Sources */,
+				E36F946A2C2D6A96003CDA7B /* Task Struct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

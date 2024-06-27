@@ -8,7 +8,7 @@ import UIKit
 import SnapKit
 
 protocol EditPageControllerDelegate: AnyObject {
-    func didAddTask(title: String, description: String)
+    func didAddTask(_ task: Task)
 }
 
 class EditPageController: UIViewController {
@@ -30,28 +30,34 @@ class EditPageController: UIViewController {
     
     private lazy var titleTextField: UITextField = {
         let view = UITextField(frame: .zero)
-        view.textColor = UIColor(hexString: "FFFFFF")
+        view.textColor = UIColor(hexString: "FFFFFF").withAlphaComponent(0.87)
         view.layer.borderColor = UIColor(hexString: "979797").cgColor
         view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 5.0
         view.textAlignment = .left
         view.keyboardType = .alphabet
         let placeholderColor = UIColor(hexString: "FFFFFF")
-        view.attributedPlaceholder = NSAttributedString(string: "   Title", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
+        view.attributedPlaceholder = NSAttributedString(string: "Title", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
+        let padding = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: view.frame.height))
+        view.leftView = padding
+        view.leftViewMode = .always
         view.text = taskTitle
         return view
     }()
     
     private lazy var descriptionTextField: UITextField = {
         let view = UITextField(frame: .zero)
-        view.textColor = UIColor(hexString: "FFFFFF")
+        view.textColor = UIColor(hexString: "FFFFFF").withAlphaComponent(0.87)
         view.layer.borderColor = UIColor(hexString: "979797").cgColor
         view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 5.0
         view.textAlignment = .left
         view.keyboardType = .alphabet
         let placeholderColor = UIColor(hexString: "FFFFFF")
-        view.attributedPlaceholder = NSAttributedString(string: "   Description", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
+        view.attributedPlaceholder = NSAttributedString(string: "Description", attributes: [NSAttributedString.Key.foregroundColor: placeholderColor])
+        let padding = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: view.frame.height))
+        view.leftView = padding
+        view.leftViewMode = .always
         view.text = taskDescription
         return view
     }()
@@ -114,8 +120,9 @@ class EditPageController: UIViewController {
               let description = descriptionTextField.text, !description.isEmpty else {
             return
         }
-        delegate?.didAddTask(title: title, description: description)
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: false) {
+            self.delegate?.didAddTask(Task(title: title, description: description))
+        }
     }
     
     func configureWithTask(title: String, description: String) {

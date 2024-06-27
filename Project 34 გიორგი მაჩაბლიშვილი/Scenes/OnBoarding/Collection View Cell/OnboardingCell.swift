@@ -17,16 +17,18 @@ class OnboardingCell: UICollectionViewCell {
     
     private lazy var taskTitle: UILabel = {
         let view = UILabel(frame: .zero)
-        view.textColor = UIColor(hexString: "FFFFFF")
+        view.textColor = UIColor(hexString: "FFFFFF").withAlphaComponent(0.87)
         view.font = UIFont.latoBold(size: 32)
+        view.textAlignment = .center
         view.numberOfLines = 1
         return view
     }()
     
     private lazy var taskDescription: UILabel = {
         let view = UILabel(frame: .zero)
-        view.textColor = UIColor(hexString: "FFFFFF")
+        view.textColor = UIColor(hexString: "FFFFFF").withAlphaComponent(0.87)
         view.font = UIFont.latoRegular(size: 16)
+        view.textAlignment = .center
         view.numberOfLines = 0
         return view
     }()
@@ -59,7 +61,7 @@ class OnboardingCell: UICollectionViewCell {
 
         taskTitle.snp.remakeConstraints { make in
             make.top.equalTo(mainImage.snp.bottom).offset(105 * Constraint.yCoeff)
-            make.leading.trailing.equalToSuperview().inset(53 * Constraint.xCoeff)
+            make.centerX.equalToSuperview()
             make.height.equalTo(38 * Constraint.yCoeff)
         }
         

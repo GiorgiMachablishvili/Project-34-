@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .clear
         view.setTitle("SKIP", for: .normal)
         view.titleLabel?.font = UIFont.latoRegular(size: 16)
-        view.titleLabel?.textColor = UIColor(hexString: "FFFFFF")
+        view.titleLabel?.textColor = UIColor(hexString: "FFFFFF").withAlphaComponent(0.87)
         view.addTarget(self, action: #selector(didTapOnSkipButton), for: .touchUpInside)
         return view
     }()
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         let view = UIPageControl(frame: .zero)
         view.currentPage = 0
         view.numberOfPages = onBoarding.count
-        view.currentPageIndicatorTintColor = UIColor(hexString: "FFFFFF")
+        view.currentPageIndicatorTintColor = UIColor(hexString: "FFFFFF").withAlphaComponent(0.87)
         view.pageIndicatorTintColor = UIColor(hexString: "AFAFAF")
         return view
     }()
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor(hexString: "8875FF")
         view.setTitle("Next", for: .normal)
         view.titleLabel?.font = UIFont.latoRegular(size: 16)
-        view.titleLabel?.textColor = UIColor(hexString: "FFFFFF")
+        view.titleLabel?.textColor = UIColor(hexString: "FFFFFF").withAlphaComponent(0.87)
         view.layer.cornerRadius = 5
         view.addTarget(self, action: #selector(didTapOnPrimaryButton), for: .touchUpInside)
         return view
@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .clear
         view.setTitle("BACK", for: .normal)
         view.titleLabel?.font = UIFont.latoRegular(size: 16)
-        view.titleLabel?.textColor = UIColor(hexString: "FFFFFF")
+        view.titleLabel?.textColor = UIColor(hexString: "FFFFFF").withAlphaComponent(0.87)
         view.addTarget(self, action: #selector(didTapOnBackButton), for: .touchUpInside)
         return view
     }()
