@@ -79,19 +79,6 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
     }
     
     //MARK: half height view
-//    private func setupHalfHeightViewController() {
-//            let editPageVC = EditPageController()
-////            addChild(editPageVC)
-//            view.addSubview(editPageVC.view)
-//            
-//            //MARK: Constraints for half the height of the screen
-//            editPageVC.view.snp.remakeConstraints { make in
-//                make.leading.trailing.equalToSuperview()
-//                make.bottom.equalToSuperview()
-//                make.height.equalTo(view.snp.height).multipliedBy(0.7)
-//            }
-//            editPageVC.didMove(toParent: self)
-//        }
     
     //MARK: update view visibility if task array is empty show tableView if not show homeHeaderView
     func updateViewVisibility() {
@@ -103,6 +90,17 @@ class HomeScreenView: UIViewController, EditPageControllerDelegate {
     //MARK: tap on plus button
     @objc func didTapOnPlusButton() {
         let editVC = EditPageController()
+//        if let sheet = editVC.sheetPresentationController {
+//            sheet.detents = [.medium(), .large()]
+//        }
+        
+        if let sheet = editVC.sheetPresentationController {
+            sheet.detents = [
+                .custom(resolver: { _ in
+                    return 228.0 * Constraint.yCoeff
+                })
+            ]
+        }
         editVC.delegate = self
         navigationController?.present(editVC, animated: true)
     }
